@@ -1,0 +1,48 @@
+/* Textbook-style math rendering */
+.math-display {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1em;
+  margin: 1.5em 0;
+  text-align: center;
+  overflow-x: auto;
+  padding: 0.5em 0;
+}
+
+.math-inline {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  padding: 0 0.2em;
+}
+
+/* Ensure proper spacing around operators */
+.math-display .mord + .mbin,
+.math-display .mord + .mrel,
+.math-display .mclose + .mbin,
+.math-display .mclose + .mrel {
+  margin-left: 0.22em;
+}
+
+.math-display .mbin + .mord,
+.math-display .mbin + .mopen,
+.math-display .mrel + .mord,
+.math-display .mrel + .mopen {
+  margin-left: 0.22em;
+}
+
+/* Ensure proper rendering of fractions */
+.math-display .mfrac {
+  vertical-align: -0.5em;
+}
+
+/* Ensure proper rendering of subscripts and superscripts */
+.math-display .msupsub {
+  font-size: 0.8em;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .math-display,
+  .math-inline {
+    color: #f0f0f0;
+  }
+}

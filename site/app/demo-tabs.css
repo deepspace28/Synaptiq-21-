@@ -1,0 +1,39 @@
+/* Dark theme styles for demo tabs */
+.demo-section {
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+.demo-card {
+  background-color: #21222c;
+  border-color: #44475a;
+}
+
+.demo-input {
+  background-color: #21222c;
+  border-color: #44475a;
+  color: #f8f8f2;
+}
+
+.demo-input::placeholder {
+  color: #6272a4;
+}
+
+.demo-button {
+  background-color: #6272a4;
+  color: #f8f8f2;
+}
+
+.demo-button:hover {
+  background-color: #8be9fd;
+  color: #282a36;
+}
+
+.demo-highlight {
+  color: #ff79c6;
+}
+
+.demo-canvas {
+  background-color: #21222c;
+  border-color: #44475a;
+}

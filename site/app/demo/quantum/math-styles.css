@@ -1,0 +1,47 @@
+/* Math styling for textbook-like appearance */
+.katex-display {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5em 0;
+}
+
+.katex {
+  font-size: 1.1em;
+}
+
+.katex-display > .katex {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Improve spacing around equations */
+.math-render .katex-display {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1em;
+}
+
+/* Make inline math stand out a bit */
+.katex-inline {
+  padding: 0 0.2em;
+}
+
+/* Improve readability of math */
+.katex {
+  color: #333333;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .math-render .katex-display {
+    background: rgba(42, 42, 42, 0.8);
+    border-color: #444444;
+  }
+
+  .katex {
+    color: #e0e0e0;
+  }
+}

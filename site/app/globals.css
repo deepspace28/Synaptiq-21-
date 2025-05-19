@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --radius: 0.5rem;
+  }
+}
+
+/* Scientific simulation dracula theme */
+.dracula-theme {
+  --bg-primary: #282a36;
+  --bg-secondary: #21222c;
+  --bg-tertiary: #44475a;
+  --fg-primary: #f8f8f2;
+  --fg-secondary: #6272a4;
+  --accent-cyan: #8be9fd;
+  --accent-green: #50fa7b;
+  --accent-orange: #ffb86c;
+  --accent-pink: #ff79c6;
+  --accent-purple: #bd93f9;
+  --accent-red: #ff5555;
+  --accent-yellow: #f1fa8c;
+}
+
+/* Scientific visualization enhancements for dark theme */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #44475a;
+}
+
+.recharts-text {
+  fill: #6272a4;
+}
+
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #21222c !important;
+  border-color: #44475a !important;
+  color: #f8f8f2 !important;
+}
+
+/* Canvas animations */
+canvas.quantum-canvas {
+  background-color: #21222c;
+}
+
+/* Code syntax highlighting in dark mode */
+.hljs {
+  background-color: #21222c;
+  color: #f8f8f2;
+}
+
+.hljs-keyword {
+  color: #ff79c6;
+}
+
+.hljs-string {
+  color: #f1fa8c;
+}
+
+.hljs-comment {
+  color: #6272a4;
+}
+
+.hljs-function {
+  color: #8be9fd;
+}
+
+.hljs-number {
+  color: #bd93f9;
+}
+
+/* Math typography improvements */
+.math-block {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+.math-inline {
+  color: #333333;
+}
+
+/* Add textbook-like math styling */
+.math-textbook .katex {
+  font-size: 1.1em;
+  color: #333333;
+}
+
+.math-textbook .katex-display {
+  margin: 1.5em 0;
+  padding: 0.5em 0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.math-textbook .katex-display > .katex {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Improve spacing around equations */
+.math-textbook .katex-html {
+  padding: 0.5em;
+}
+
+/* Make inline math stand out appropriately */
+.math-textbook .katex-inline {
+  padding: 0 0.2em;
+  color: #333333;
+}
+
+/* Dark mode adjustments for math */
+@media (prefers-color-scheme: dark) {
+  .math-textbook .katex {
+    color: #e0e0e0;
+  }
+
+  .math-textbook .katex-display {
+    background-color: #2a2a2a;
+    border-color: #444444;
+  }
+
+  .math-inline {
+    color: #e0e0e0;
+  }
+
+  .math-block {
+    background-color: #2a2a2a;
+    border-color: #444444;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  /* Improve code block readability in dark mode */
+  pre {
+    background-color: hsl(var(--card));
+    border: 1px solid;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  code {
+    color: hsl(var(--primary));
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+  }
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Scientific data visualization enhancements */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: hsl(var(--muted-foreground) / 0.2);
+}
+
+.recharts-text {
+  fill: hsl(var(--muted-foreground));
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-duration: 300ms;
+}
+
+/* Subtle hover animations */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Interactive elements */
+.interactive-element {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-element::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsl(var(--foreground) / 0.05);
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.interactive-element:hover::after {
+  opacity: 1;
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Textbook Math Component Styles */
+.textbook-math {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.textbook-math-display {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.textbook-math-inline {
+  display: inline-block;
+  padding: 0 0.2rem;
+}
+
+/* Dark mode for textbook math */
+@media (prefers-color-scheme: dark) {
+  .textbook-math-display {
+    background-color: #2a2a2a;
+    border-color: #444444;
+  }
+}
